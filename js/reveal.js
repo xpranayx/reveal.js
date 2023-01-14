@@ -1373,6 +1373,7 @@ export default function( revealElement, options ) {
 		}
 
 		if( slideChanged ) {
+			getSlideData(currentSlide.id);
 			dispatchEvent({
 				type: 'slidechanged',
 				data: {
