@@ -1371,9 +1371,12 @@ export default function( revealElement, options ) {
 		while( stateBefore.length ) {
 			dom.viewport.classList.remove( stateBefore.pop() );
 		}
+		if(isFirstSlide()) {
+			setupSlide(currentSlide.id);
+		}
 
 		if( slideChanged ) {
-			getSlideData(currentSlide.id);
+			setupSlide(currentSlide.id);
 			dispatchEvent({
 				type: 'slidechanged',
 				data: {
